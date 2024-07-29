@@ -84,9 +84,6 @@ export const getUserExpenses = async (req, res) => {
   }
 };
 
-// @desc    Get all expenses
-// @route   GET /api/expenses
-// @access  Public
 export const getAllExpenses = async (req, res) => {
   try {
     const expenses = await Expense.find().populate('paidBy participants.user', 'name email');
